@@ -20,6 +20,6 @@ app.use(cookieParser())
 app.use('/', userRoutes)
 app.use('/', noteRoutes)
 
-app.listen(process.env.SERVER_PORT, process.env.SERVER_HOST, () => {
-  console.log(`Server started on ${process.env.SERVER_HOST}:${process.env.SERVER_PORT}`)
+app.listen(process.env.PORT || 5000, () => {
+  console.log('Server successfully started!')
 })

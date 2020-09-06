@@ -1,9 +1,12 @@
 {
   "name": "keeper-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "author": "Utpal Singh",
   "license": "MIT",
+  "engines": {
+    "node": "14.3.0"
+  },
   "dependencies": {
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
