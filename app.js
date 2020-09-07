@@ -10,7 +10,7 @@ const { noteRoutes, userRoutes } = require('./src/routes/index')
 const app = express()
 
 const allowedOrigins = [
-  'http://localhost:3000',
+  'http://localhost:8080',
   'https://keeper-2c245.web.app',
   'https://keeper-2c245.firebaseapp.com'
 ]

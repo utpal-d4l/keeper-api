@@ -3,7 +3,17 @@ const jwt = require('jsonwebtoken')
 function setCookie(req, res) {
   const payload = { username: req.body.username }
   const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' })
-  res.cookie('token', token, { httpOnly: true, sameSite: 'none', secure: true }).status(200).send('Success!')
+  res
+    .cookie(
+      'token',
+      token,
+      {
+        httpOnly: true,
+        ...(process.env.ENVIRONMENT === 'production' && { sameSite: 'none', secure: true })
+      }
+    )
+    .status(200)
+    .send('Success!')
 }
 
 function authorizeRequest(req, res, next) {
